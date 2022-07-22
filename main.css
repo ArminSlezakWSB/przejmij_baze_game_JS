@@ -1,0 +1,527 @@
+body
+{
+    background: #212122;
+    color: white;
+    
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main
+{
+    width: 630px;
+    height: 400px;
+    
+    position: relative;
+    
+    transform: scale(1.3);
+    
+    border: 2px solid purple;
+    background: linear-gradient(90deg, rgba(177, 0, 255, 0.21) 50%, rgba(255, 0, 167, 0.21) 50%);
+}
+.bank
+{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 120px;
+    height: 200px;
+    
+    border: 2px solid rebeccapurple;
+}
+.enemyBank
+{
+    left: 0px;
+}
+.myBank
+{
+    right: 0px;
+}
+.mainschield
+{
+    position: absolute;
+    width: 250px;
+    height: 30px;
+    
+    top: 50%;
+    
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 30px;
+    letter-spacing: 3px;
+    font-weight: 500;
+    
+    border: 2px solid #b738bc;
+    background: rgba(224, 22, 22, 0.77);
+}
+.enemyschield
+{
+    left: 30px;
+    transform: translateY(-50%) rotate(270deg);
+}
+
+.enemyschield progress::after
+{
+    transform: rotate(0deg);
+}
+.myschield
+{
+    right: 30px;
+    transform: translateY(-50%) rotate(90deg);
+}
+.myschield progress
+{
+    transform: rotate(180deg);
+}
+.board
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;    
+    transform: translate(-50%,-50%);
+    
+    width: 280px;
+    height: 200px;
+    
+    border: 1px solid green;
+}
+.board div
+{
+    float:left;
+    width: 20px;
+    height: 20px;  
+    
+    font-size: 6px;
+    
+    margin: 0;
+    box-sizing: border-box;
+    
+    border: 1px solid green;
+    background: rgba(0, 128, 0, 0.42);
+    color : transparent;
+}
+.gold
+{
+    position: absolute;
+    bottom: 35px;
+    width: 140px;
+    height: 50px;
+    
+    font-size: 30px;
+    
+    box-sizing: border-box;
+    
+    padding-left: 10px;
+    
+}
+.gold img
+{
+    position: absolute;
+    width: 35px;
+    
+    top: 10%;
+}
+.enemygold
+{
+    left: 30px;
+    padding-left: 15px;
+}
+.mygold
+{
+    right: 30px;
+    padding-right: 15px;
+    text-align: right;
+}
+.myBank .bankPlus
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0px;
+    display: none;
+    
+    /*animation: appearance ease .3s;*/
+}
+.myBank .bankPlus::before
+{
+    content: '+';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background: rgba(255, 0, 0, 0.33);*/
+    color: #262323;
+    
+    font-size: 30px;
+}
+.myBank:hover .bankPlus
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    
+    display: block;
+    
+    text-align: center;
+    font-size: 40px;
+    font-weight:  900;
+    line-height: 40px;
+    
+    cursor: pointer;
+    
+    z-index: 10;
+    
+    color: rgba(178, 154, 154, 0.93);
+    background: linear-gradient(orange 50%, yellow);
+}
+@keyframes appearance
+{
+    from{
+        height: 0;
+    }
+    to{
+        height: 40px;
+    }
+}
+@keyframes disppearance
+{
+    from{
+        height: 40px;
+    }
+    to{
+        height: 0px;
+    }
+}
+.bank .bankBlokCont
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    background: rgba(255, 0, 0, 0.19);
+}
+.myBank:hover .bankBlokCont
+{
+    height: 80%;
+}
+
+.bankBlokCont *
+{
+    position: relative;
+    
+    width: 20px;
+    height: 20px;
+    
+    margin-left: 25px;
+    margin-top: 20px;
+    
+    overflow: hidden;
+    
+    border-radius: 50%;
+    
+    border: 1px solid #ffffff;
+    
+    display: inline-block;
+    animation: bounce 1s  ease-out infinite;
+}
+#mybank .bankBlokCont *
+{
+    cursor: pointer;
+}
+@keyframes bounce
+{
+    0%,100%{
+        transform: scale(.8);
+    }
+    25%,75%
+    {
+        transform: scale(.9);
+    }
+    50%
+    {
+        transform: scale(1);
+    }    
+}
+.b1
+{
+    background: #d9cdcd;
+}
+#mybank .b1:hover::after
+{
+    content: '300';
+    position: absolute;
+    
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    
+    color: #e01437;
+}
+.b2
+{
+    background: radial-gradient(black, white, black, white, black);
+}
+#mybank .b2:hover::after
+{
+    content: '1000';
+    position: absolute;
+    
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    
+    text-align: center;
+    line-height: 20px;
+    font-size: 10px;
+    font-weight: 800;
+    
+    color: #e01437;
+}
+#mybank .b2:hover
+{
+    background: gray;
+}
+.b3
+{
+    background: black;
+    cursor: default;
+}
+.towerShop
+{
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    
+    width: 280px;
+    height: 30px;
+    border-radius: 15px;
+    
+    background: #75e875;
+    background: darkgreen;
+    border: 1px solid green;
+    
+    overflow: hidden;
+}
+.towerShop label
+{
+    position: relative;
+    top: 0;
+    font-size: 10px;
+    float: left;
+    
+    height: 100%;
+    width: calc(100%/3);
+    
+    box-sizing: border-box;
+    
+    box-shadow: 2px 2px 10px 0 #212121, inset 2px 2px 10px 0 #212121;
+}
+.towerShop label:nth-of-type(2)
+{
+    border-left: 2px solid darkgreen;
+    border-right: 2px solid darkgreen;
+}
+.towerShop label:hover
+{
+    background: darkgreen;
+    background: #148014;
+}
+.towerShop img
+{
+    position: absolute;
+    right: 5px;
+    top: 0;
+    
+    z-index: 20;
+}
+.t1
+{
+    transform: translateY(-5px);
+}
+.t2
+{
+    transform: translateY(2.5px);
+}
+.towerShop label input[type=radio]
+{
+    -webkit-appearance: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    z-index: 25;
+    outline: none;
+    transform: translateX(-6px) translateY(-4px);
+    
+    background: transparent;
+}
+.towerShop label input[type=radio]:checked
+{
+    box-shadow: 2px 2px 10px 0 #212121, inset 2px 2px 10px 0 #212121;
+    /*background: darkgreen;*/
+}
+
+.towerShop label:nth-of-type(1)::after,
+.towerShop label:nth-of-type(2)::after,
+.towerShop label:nth-of-type(3)::after
+{
+    content: 'Działo';
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    /*transform: translateY(-50%);*/
+    
+    font-size: 18px;
+    font-weight: 800;
+    color: rgba(165, 153, 102, 0.93);
+}
+.towerShop label:nth-of-type(1)::after
+{
+    content: 'Działo';
+}
+.towerShop label:nth-of-type(2)::after
+{
+    content: 'Osłona';
+}
+.towerShop label:nth-of-type(3)::after
+{
+    content: 'Medyk';
+}
+.towerShop label span
+{
+    position: absolute;
+    top: 0%;
+    left: 12%;
+    /*transform: translateY(-50%);*/
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    
+    color: #a29c97;
+}
+.mojepola:hover
+{
+    background: rgba(75, 211, 75, 0.71);
+    cursor: pointer;
+}
+.dzialo1:hover div
+{
+    color: white;
+    font-size: 8px;
+    line-height: 20px;
+    text-align: center;
+    
+    cursor: pointer;
+}
+
+.oslona1
+{
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+.oslona1:hover 
+{
+    color: white;
+    font-size: 8px;
+    line-height: 20px;
+    text-align: center;
+    
+    cursor: pointer;
+}
+progress
+{
+    -webkit-appearance: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+progress::after
+{
+    content: attr(value) ' HP';
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    transform: rotate(180deg) /*rotateY(180deg)*/;
+}
+progress::-webkit-progress-bar
+{
+    background: darkred;
+}
+progress::-webkit-progress-value
+{
+    background: rgba(224, 42, 42, 0.77);
+    color: white;
+}
+
+.nalot
+{
+    position: absolute;
+    
+    width: 100%;
+    height: 100px;
+    
+    overflow: hidden;
+}
+
+.nalot img
+{
+    position: absolute;
+    left: 100%;
+    
+    height: 100px;
+    
+    z-index: 1000;
+}
+
+#wywolajNalot
+{
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    
+    background: rgba(255, 140, 0, 0.7);
+    background-image: url(samolot.png);
+    background-size: cover;   
+    border: 2px solid #332c2c;
+    cursor: pointer;
+    
+    z-index: 500;
+}
+
+.disavaible
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    z-index: 550;
+    
+    cursor: default;
+    background: linear-gradient(gray, black, gray, black, gray, black, gray, black, gray, black);
+}
